@@ -18,7 +18,7 @@
 		8D819E9924A5019000749F43 /* Tumblr___FeedTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D819E9824A5019000749F43 /* Tumblr___FeedTests.m */; };
 		8D819EA424A5019000749F43 /* Tumblr___FeedUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D819EA324A5019000749F43 /* Tumblr___FeedUITests.m */; };
 		8D819EB324A5047F00749F43 /* PhotosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D819EB224A5047F00749F43 /* PhotosViewController.m */; };
-		8D819EB724A5135900749F43 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D819EB624A5135900749F43 /* DetailsViewController.m */; };
+		8D819EBD24A545A600749F43 /* PhotosTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D819EBC24A545A600749F43 /* PhotosTableViewCell.m */; };
 		BB3124D5583C29668216EEA5 /* Pods_Tumblr___FeedTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91245218506860E39F780152 /* Pods_Tumblr___FeedTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -61,8 +61,8 @@
 		8D819EA524A5019000749F43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D819EB124A5047F00749F43 /* PhotosViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotosViewController.h; sourceTree = "<group>"; };
 		8D819EB224A5047F00749F43 /* PhotosViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotosViewController.m; sourceTree = "<group>"; };
-		8D819EB524A5135900749F43 /* DetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
-		8D819EB624A5135900749F43 /* DetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
+		8D819EBB24A545A600749F43 /* PhotosTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotosTableViewCell.h; sourceTree = "<group>"; };
+		8D819EBC24A545A600749F43 /* PhotosTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotosTableViewCell.m; sourceTree = "<group>"; };
 		91245218506860E39F780152 /* Pods_Tumblr___FeedTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods_Tumblr___FeedTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F05CFF6A336B6EA5C3B7838 /* Pods-Tumblr - FeedTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tumblr - FeedTests.debug.xcconfig"; path = "Target Support Files/Pods-Tumblr - FeedTests/Pods-Tumblr - FeedTests.debug.xcconfig"; sourceTree = "<group>"; };
 		ADA9A8625910847C11180A5A /* Pods-Tumblr - Feed.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tumblr - Feed.release.xcconfig"; path = "Target Support Files/Pods-Tumblr - Feed/Pods-Tumblr - Feed.release.xcconfig"; sourceTree = "<group>"; };
@@ -174,8 +174,8 @@
 			children = (
 				8D819EB124A5047F00749F43 /* PhotosViewController.h */,
 				8D819EB224A5047F00749F43 /* PhotosViewController.m */,
-				8D819EB524A5135900749F43 /* DetailsViewController.h */,
-				8D819EB624A5135900749F43 /* DetailsViewController.m */,
+				8D819EBB24A545A600749F43 /* PhotosTableViewCell.h */,
+				8D819EBC24A545A600749F43 /* PhotosTableViewCell.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -428,8 +428,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D819EBD24A545A600749F43 /* PhotosTableViewCell.m in Sources */,
 				8D819E7E24A5018F00749F43 /* AppDelegate.m in Sources */,
-				8D819EB724A5135900749F43 /* DetailsViewController.m in Sources */,
 				8D819EB324A5047F00749F43 /* PhotosViewController.m in Sources */,
 				8D819E8F24A5019000749F43 /* main.m in Sources */,
 				8D819E8124A5018F00749F43 /* SceneDelegate.m in Sources */,

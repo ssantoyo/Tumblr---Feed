@@ -7,33 +7,32 @@
 //
 
 #import "PhotosViewController.h"
-#import "DetailsViewController.h"
+#import "PhotosTableViewCell.h"
 #import "UIImageView+AFNetworking.h"
 
 
 @interface PhotosViewController() <UITableViewDataSource, UITableViewDelegate>
 
 
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong,nonatomic) NSArray *posts;
-@property (weak, nonatomic) IBOutlet UITableView *photosTableView;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 
 @end
 
 @implementation PhotosViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
+-(void)fetchPhotos {
+    NSURL *url =
+    [NSURL URLWithString:@"https://api.tumblr.com/v2/blog/humansofnewyork.tumblr.com/posts/photo?api_key=Q6vHoaVm5L1u2ZAW1fqv3Jw48gFzYVg9P0vH0VHl3GVy6quoGV"];
     
-    self.tableView.dataSource = self;
-    self.tableView.delegate = self;
-
-    NSURL *url = [NSURL URLWithString:@"https://api.tumblr.com/v2/blog/humansofnewyork.tumblr.com/posts/photo?api_key=Q6vHoaVm5L1u2ZAW1fqv3Jw48gFzYVg9P0vH0VHl3GVy6quoGV"];
     NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:10.0];
+    
     NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:nil delegateQueue:[NSOperationQueue mainQueue]];
+    
     NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-            if (error != nil) {
+            
+        if (error != nil) {
                 NSLog(@"%@", [error localizedDescription]);
             }
             else {
@@ -47,18 +46,29 @@
                 
                 // TODO: Get the posts and store in posts property
                 // TODO: Reload the table view
-                [self.photosTableView reloadData];
+                [self.tableView reloadData];
             }
         }];
     [task resume];
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    self.tableView.dataSource = self;
+    self.tableView.delegate = self;
+
+    [self fetchPhotos];
     // Do any additional setup after loading the view.
 }
+
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.posts.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    DetailsViewController *cell = [tableView dequeueReusableCellWithIdentifier:@"DetailsViewController"]; //forIndexPath:indexPath];
+   PhotosTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PhotosTableViewCell"]; //forIndexPath:indexPath];
     
     NSDictionary *post = self.posts[indexPath.row];
 
@@ -75,7 +85,7 @@
        NSString *urlString = originalSize[@"url"];
 
        // 4. Create a URL using the urlString
-       NSURL *url = [NSURL URLWithString:urlString];
+       NSURL *url = [NSURL URLWithString: urlString];
         
         
     }
