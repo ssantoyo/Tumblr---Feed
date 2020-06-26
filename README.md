@@ -1,7 +1,7 @@
 # Tumblr---Feed
 # Lab 1 - *Sergio Santoyo*
 
-**Tumblr--Feed** is a Image blog application for iOS.
+**Tumblr--Feed** is an Image blog application for iOS.
 
 Submitted by: **Sergio Santoyo**
 
