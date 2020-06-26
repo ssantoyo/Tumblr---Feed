@@ -59,6 +59,8 @@
     self.tableView.delegate = self;
 
     [self fetchPhotos];
+    
+    self.tableView.rowHeight = 380;
     // Do any additional setup after loading the view.
 }
 
@@ -68,7 +70,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-   PhotosTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PhotosTableViewCell"]; //forIndexPath:indexPath];
+   PhotosTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PhotosViewControllerCell"]; //forIndexPath:indexPath];
     
     NSDictionary *post = self.posts[indexPath.row];
 
@@ -86,6 +88,7 @@
 
        // 4. Create a URL using the urlString
        NSURL *url = [NSURL URLWithString: urlString];
+        [cell.photosImageView setImageWithURL:url];
         
         
     }
